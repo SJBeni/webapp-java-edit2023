@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head th:insert="~{fragments/header}"></head>
+<body class="container mt-5">
+
+<h2>Lista de Dueñios</h2>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Direccion</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr th:each="duenio : ${duenios}">
+            <th th:text="${duenio.id}"></th>
+            <th th:text="${duenio.nombre}"></th>
+            <th th:text="${duenio.direccion}"></th>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Enlace para regresar a la lista de mascotas -->
+<a th:href="@{mascotas}" class="btn btn-secondary">Ver lista de Mascotas</a>
+
+<div th:replace="~{fragments/footer}"></div>
+
+</body>
+</html>
